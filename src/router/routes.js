@@ -8,7 +8,7 @@ export default [
     children: [
       {
         path: '/',
-        component: loadable(import('@/views/home/home/Home'))
+        component: () => loadable(import('@/views/home/home/Home'))
       },
     ]
   },
@@ -24,12 +24,12 @@ export default [
       },
       {
         path: '/user/login',
-        component: loadable(import('@/views/user/login/Login')),
+        component: () => loadable(import('@/views/user/login/Login')),
         meta: { title: '登录' }
       },
       {
         path: '/user/register',
-        component: loadable(import('@/views/user/register/Register')),
+        component: () => loadable(import('@/views/user/register/Register')),
         meta: { title: '注册' }
       }
     ]

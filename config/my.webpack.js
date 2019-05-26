@@ -46,7 +46,6 @@ module.exports = function(config) {
           uglifyOptions: {
             compress: {
               drop_console: true,
-              warnings: false
             }
           }
         })

@@ -15,14 +15,14 @@ export function loadable(AsyncView) {
     // 则使用加载失败时使用的组件。默认值是：`Infinity`
     timeout: 8000
   });
-
-  return AsyncHandler;
-  // return Promise.resolve({
-  //   name: 'Loadable',
-  //   functional: true,
-  //   render(h, { data, children }) {
-  //     console.log(data);
-  //     return h(AsyncHandler, data, children);
-  //   }
-  // });
+  
+  // 使用这种加载方式会导致组件内置路由钩子失效
+  return Promise.resolve({
+    name: 'Loadable',
+    functional: true,
+    render(h, { data, children }) {
+      console.log(data);
+      return h(AsyncHandler, data, children);
+    }
+  });
 }
