@@ -21,7 +21,6 @@ export function loadable(AsyncView) {
     name: 'Loadable',
     functional: true,
     render(h, { data, children }) {
-      console.log(data);
       return h(AsyncHandler, data, children);
     }
   });
