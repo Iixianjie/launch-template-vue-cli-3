@@ -1,18 +1,17 @@
-> 把平时开发中可能会用到的自定义配置抽离到my.config.js中, 并且在my.webpack.js中新增了一些常用的配置。
-> 包含store和router的起始配置和使用示例。
+# vue-cli-3-template
 
-[github](https://github.com/Iixianjie/launch-template-vue-cli-v3)
+<https://github.com/Iixianjie/launch-template-vue-cli-v3>
 
 ### TODOS
 - [x] 常用配置整合
 - [x] vuex基本配置
 - [x] vue-router基本配置
 - [x] api请求整合和示例
+- [x] 常用的基础组件
 - [ ] mock
 
 ### 使用
 通过[launch-cli](https://github.com/Iixianjie/launch-cli)安装
-
 
 额外依赖
 ```
@@ -26,6 +25,8 @@ compression-webpack-plugin uglifyjs-webpack-plugin
 - 配置是否在prod阶段清除console
 - 快速配置需要引入的sass全局变量、mixin等
 - gizp
-- 一个还过得去的文件结构
+- 大量基础组件
+- 自动化的基础组件和模块导入
+- 清晰的文件结构
 
 

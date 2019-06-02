@@ -1,0 +1,64 @@
+@import './block';
+@import './element';
+
+$duration1: 0.3s;
+$duration2: 0.5s;
+
+/* ===== 动画 ===== */
+// 淡入淡出
+.fade-enter-active,
+.fade-leave-active {
+  transition: $duration1;
+}
+.fade-leave-to,
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-page-enter-active,
+.fade-page-leave-active {
+  transition: $duration2;
+}
+.fade-page-leave-to,
+.fade-page-enter {
+  opacity: 0;
+}
+
+// 左 → 右 滑动
+.slide-l-r-enter-active,
+.slide-l-r-leave-active {
+  transition: $duration2;
+}
+
+.slide-l-r-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+.slide-l-r-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+
+// 左 ← 右 滑动
+.slide-r-l-enter-active,
+.slide-r-l-leave-active {
+  transition: $duration2;
+}
+.slide-r-l-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.slide-r-l-leave-to {
+  transform: translate3d(-100%, 0, 0);
+}
+
+// 下 → 上 滑动
+.slide-b-t-enter-active,
+.slide-b-t-leave-active {
+  transition: $duration2;
+}
+.slide-b-t-enter {
+  transform: translate3d(0, -100%, 0);
+}
+
+.slide-b-t-leave-to {
+  transform: translate3d(0, 100%, 0);
+}

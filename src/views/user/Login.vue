@@ -1,3 +1,3 @@
 <template lang="pug">
-  .login login
+  Pager.login(top="50px") login
 </template>

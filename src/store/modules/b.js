@@ -1,4 +1,4 @@
-export const b = {
+export default {
   namespaced: true,
   state: {
     num: 0,

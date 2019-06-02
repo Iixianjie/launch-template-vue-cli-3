@@ -1,6 +1,6 @@
 import { setState } from '@/store/util';
 
-export const home = {
+export default {
   namespaced: true,
   state: {
     num: 0

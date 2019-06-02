@@ -8,7 +8,7 @@ export default [
     children: [
       {
         path: '/',
-        component: () => loadable(import('@/views/home/home/Home'))
+        component: () => import('@/views/home/Home')
       },
     ]
   },
@@ -24,18 +24,30 @@ export default [
       },
       {
         path: '/user/login',
-        component: () => loadable(import('@/views/user/login/Login')),
+        component: () => import('@/views/user/Login'),
         meta: { title: '登录' }
       },
       {
         path: '/user/register',
-        component: () => loadable(import('@/views/user/register/Register')),
+        component: () => import('@/views/user/Register'),
         meta: { title: '注册' }
       }
     ]
   },
   {
+    path: '/404',
+    component: require('@/components/Result/NotFound').default
+  },
+  {
+    path: '/500',
+    component: require('@/components/Result/ServerErorr').default
+  },
+  {
+    path: '/ResultPage',
+    component: require('@/components/Result/ResultPage').default
+  },
+  {
     path: '*',
-    component: require('@/views/_common/NotFound/NotFound').default
-  }
+    redirect: '/404'
+  },
 ];

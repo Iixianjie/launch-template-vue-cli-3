@@ -8,7 +8,7 @@ let delay = delay => {
   });
 };
 
-export const a = {
+export default {
   namespaced: true,
   state: {
     num: 0

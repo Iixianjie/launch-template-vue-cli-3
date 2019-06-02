@@ -3,11 +3,10 @@ export default {
   name: 'BaseLayout',
   render() {
     return (
-      <div>
-        <div>base layout</div>
-        <router-view></router-view>
-      </div>
-    )
+      <PageTranstion type="fade-page">
+        <router-view />
+      </PageTranstion>
+    );
   }
-}
+};
 </script>
