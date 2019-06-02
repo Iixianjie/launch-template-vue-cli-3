@@ -8,7 +8,7 @@
 - [x] vue-router基本配置
 - [x] api请求整合和示例
 - [x] 常用的基础组件
-- [ ] mock
+- [x] mock
 
 ### 使用
 通过[launch-cli](https://github.com/Iixianjie/launch-cli)安装
@@ -28,5 +28,5 @@ compression-webpack-plugin uglifyjs-webpack-plugin
 - 大量基础组件
 - 自动化的基础组件和模块导入
 - 清晰的文件结构
-
+- 包含基于koa的简单mock服务
 

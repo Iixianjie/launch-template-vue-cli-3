@@ -1,5 +1,19 @@
 const webpack = require('webpack');
 const myConf = require('./my.config');
+const chalk = require('chalk');
+
+/* 启动mock服务 */
+const cp = require('child_process').exec('npm run mock');
+
+cp.stdout.on('data', function (data) {
+  if(/http:\/\/localhost/.test(data)) {
+    console.log('   ' + chalk.blue('[mock] ') + data);
+  }
+});
+
+cp.stderr.on('data', function (err) {
+  console.log('   ' + chalk.red('[mock] ') + data);
+});
 
 function isEmptyObj(obj) {
   return Object.keys(obj).length <= 0;

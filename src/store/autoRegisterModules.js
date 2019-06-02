@@ -2,17 +2,13 @@ import lowerCase from 'lodash/lowerCase';
 
 const requireModules = require.context(
   '@/views',
-  // 是否查询其子目录
   true,
-  // 匹配基础组件文件名的正则表达式
   /\w+\.(module)\.(js)$/,
 );
 
 const requireModulesGlobal = require.context(
   './modules',
-  // 是否查询其子目录
   true,
-  // 匹配基础组件文件名的正则表达式
   /\w+\.(js)$/,
 );
 
