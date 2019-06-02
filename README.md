@@ -13,10 +13,6 @@
 ### 使用
 通过[launch-cli](https://github.com/Iixianjie/launch-cli)安装
 
-额外依赖
-```
-compression-webpack-plugin uglifyjs-webpack-plugin
-```
 
 - 列出了所有开发中可能会用到的配置(就个人而言)
 - 更方便的配置环境变量且不用必须添加VUE_APP_前戳或新建.env文件
