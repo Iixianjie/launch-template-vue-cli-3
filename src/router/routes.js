@@ -10,6 +10,10 @@ export default [
         path: '/',
         component: () => import('@/views/home/Home')
       },
+      {
+        path: '/test',
+        component: () => import('@/views/home/Test')
+      },
     ]
   },
   {

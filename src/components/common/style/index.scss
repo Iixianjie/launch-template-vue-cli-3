@@ -1,64 +1,151 @@
 @import './block';
 @import './element';
 
-$duration1: 0.3s;
-$duration2: 0.5s;
+$duration1: 0.35s;
+$duration2: 0.6s;
 
 /* ===== 动画 ===== */
-// 淡入淡出
-.fade-enter-active,
-.fade-leave-active {
+
+/* fade */
+.bk-fade-enter-active,
+.bk-fade-leave-active {
   transition: $duration1;
 }
-.fade-leave-to,
-.fade-enter {
+.bk-fade-leave-to,
+.bk-fade-enter {
   opacity: 0;
 }
 
-.fade-page-enter-active,
-.fade-page-leave-active {
-  transition: $duration2;
+/* 下 -> 上 + fade */
+.bk-fade-up-enter-active,
+.bk-fade-up-leave-active {
+  transition: $duration1;
 }
-.fade-page-leave-to,
-.fade-page-enter {
+.bk-fade-up-leave-to,
+.bk-fade-up-enter {
   opacity: 0;
+  transform: translate3d(0, 100%, 0);
 }
 
-// 左 → 右 滑动
-.slide-l-r-enter-active,
-.slide-l-r-leave-active {
-  transition: $duration2;
+/* 下 -> 上 */
+.bk-slide-up-enter-active,
+.bk-slide-up-leave-active {
+  transition: $duration1;
+}
+.bk-slide-up-leave-to,
+.bk-slide-up-enter {
+  transform: translate3d(0, 100%, 0);
 }
 
-.slide-l-r-enter {
-  transform: translate3d(-100%, 0, 0);
+/* 上 -> 下 + fade */
+.bk-fade-down-enter-active,
+.bk-fade-down-leave-active {
+  transition: $duration1;
 }
-.slide-l-r-leave-to {
-  transform: translate3d(100%, 0, 0);
-}
-
-// 左 ← 右 滑动
-.slide-r-l-enter-active,
-.slide-r-l-leave-active {
-  transition: $duration2;
-}
-.slide-r-l-enter {
-  transform: translate3d(100%, 0, 0);
-}
-
-.slide-r-l-leave-to {
-  transform: translate3d(-100%, 0, 0);
-}
-
-// 下 → 上 滑动
-.slide-b-t-enter-active,
-.slide-b-t-leave-active {
-  transition: $duration2;
-}
-.slide-b-t-enter {
+.bk-fade-down-leave-to,
+.bk-fade-down-enter {
+  opacity: 0;
   transform: translate3d(0, -100%, 0);
 }
 
-.slide-b-t-leave-to {
-  transform: translate3d(0, 100%, 0);
+/* 上 -> 下 */
+.bk-slide-down-enter-active,
+.bk-slide-down-leave-active {
+  transition: $duration1;
+}
+.bk-slide-down-leave-to,
+.bk-slide-down-enter {
+  transform: translate3d(0, -100%, 0);
+}
+
+/* 右 -> 左 + fade */
+.bk-fade-left-enter-active,
+.bk-fade-left-leave-active {
+  transition: $duration1;
+}
+.bk-fade-left-leave-to,
+.bk-fade-left-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+/* 右 -> 左 */
+.bk-slide-left-enter-active,
+.bk-slide-left-leave-active {
+  transition: $duration1;
+}
+.bk-slide-left-leave-to,
+.bk-slide-left-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+/* 左 -> 右 + fade */
+.bk-fade-right-enter-active,
+.bk-fade-right-leave-active {
+  transition: $duration1;
+}
+.bk-fade-right-leave-to,
+.bk-fade-right-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+/* 左 -> 右 */
+.bk-slide-right-enter-active,
+.bk-slide-right-leave-active {
+  transition: $duration1;
+}
+.bk-slide-right-leave-to,
+.bk-slide-right-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+
+/* zoom */
+.bk-zoom-enter-active,
+.bk-zoom-leave-active {
+  transition: $duration1;
+}
+.bk-zoom-leave-to,
+.bk-zoom-enter {
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0);
+}
+
+/* zoom-reverse */
+.bk-zoom-reverse-enter-active,
+.bk-zoom-reverse-leave-active {
+  transition: $duration1;
+}
+.bk-zoom-reverse-leave-to,
+.bk-zoom-reverse-enter {
+  opacity: 0;
+  transform: scale3d(1.5, 1.5, 0);
+}
+
+/* bounce */
+.bk-bounce-enter-active {
+  animation: bk-bounce $duration2;
+}
+
+.bk-bounce-leave-active {
+  transition: $duration1;
+}
+.bk-bounce-leave-to {
+  transform: scale3d(0.7, 0.7, 0);
+  opacity: 0;
+}
+
+@keyframes bk-bounce{
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

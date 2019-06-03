@@ -5,7 +5,7 @@
       <router-link to="/user/login">User-login</router-link> |
       <router-link to="/user/register">user-register</router-link>
     </div>
-    <PageTranstion type="fade-page">
+    <PageTranstion type="bk-fade">
       <router-view/>
     </PageTranstion>
   </div>

@@ -69,7 +69,7 @@
       )
 
       return (
-        <transition name="fade">
+        <transition name="bk-fade">
           {this.show && Spin}
         </transition>
       )

@@ -44,9 +44,9 @@
             // 返回时需要去掉前一个路由
             let formPath = routerList.indexOf(from.path);
             routerList.splice(formPath, 1)
-            this.transitionName = 'slide-l-r';
+            this.transitionName = 'bk-slide-right';
           } else {
-            this.transitionName = 'slide-r-l';
+            this.transitionName = 'bk-slide-left';
           }
 
         }

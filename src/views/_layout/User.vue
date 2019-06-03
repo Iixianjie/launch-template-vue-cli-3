@@ -3,7 +3,7 @@ export default {
   name: 'UserLayout',
   render() {
     return (
-      <PageTranstion type="fade-page">
+      <PageTranstion type="bk-fade">
         <router-view />
       </PageTranstion>
     )

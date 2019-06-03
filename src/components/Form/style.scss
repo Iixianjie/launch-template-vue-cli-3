@@ -1,0 +1,137 @@
+/* blink */
+.bk-form {
+  padding: 16px;
+  font-size: $font-size-m;
+  line-height: 1.4;
+  background-color: #fff;
+
+  &.__row {
+    flex-wrap: wrap;
+
+
+    .bk-formItem {
+      flex-wrap: wrap;
+    }
+
+    .bk-formItem_label {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed #eee;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+.bk-formItem {
+  position: relative;
+  display: flex;
+  padding: 16px 0;
+
+  & + .bk-formTitle {
+    margin-top: 24px;
+  }
+
+  & + & {
+    border-top: 1px solid $b-border;
+  }
+
+  &_label {
+    flex: 0 0 auto;
+    margin-right: 16px;
+    max-width: 30%;
+    min-width: 20%;
+    color: $b-title;
+  }
+
+  &_cont {
+    flex: 1 1 auto;
+    color: $b-primary;
+  }
+
+  &_contMain {
+    word-break: break-all;
+  }
+
+  &_arrow {
+    display: flex;
+    &:before {
+      margin: auto;
+    }
+  }
+
+  &_statusIcon {
+    display: flex;
+    padding: 0 4px;
+    font-size: $font-size-24;
+
+    &:after {
+      margin: auto;
+      font-family: "blink-font";
+      font-weight: 600;
+    }
+
+    &.__error:after {
+      content: "\e6a1";
+      color: $color-error;
+    }
+
+    &.__warn:after {
+      content: "\e6a8";
+      color: $color-warn;
+    }
+
+    &.__success:after {
+      content: "\e6a2";
+      color: $color-success;
+    }
+
+    &.__info:after {
+      content: "\e6a5";
+      color: $color-info;
+    }
+  }
+
+  &_info {
+    font-size: $font-size-s;
+    margin-top: 8px;
+    color: $b-second;
+    word-wrap: break-word;
+
+    &.__error {
+      color: $color-error;
+    }
+
+    &.__warn {
+      color: $color-warn;
+    }
+
+    &.__success {
+      color: $color-success;
+    }
+
+    &.__info {
+      color: $color-info;
+    }
+  }
+}
+
+.bk-formTitle {
+
+  &_main {
+    font-size: $font-size-m + 2;
+    color: $b-title;
+    font-weight: bold;
+  }
+
+  &_desc {
+    font-size: $font-size-s;
+    color: $b-second;
+  }
+}
+
+.bk-formFoot {
+  color: $b-second;
+  font-size: $font-size-s;
+  padding: 16px 0 8px;
+}
