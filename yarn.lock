@@ -702,6 +702,11 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@lxjx/utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@lxjx/utils/-/utils-1.0.1.tgz#790bffa43d80bc734fa4868c32529d2ab6afa983"
+  integrity sha512-kD6WEEnuzq+QbcsAXBrXY6BJ35UyDVSq7JiacfG8DqmHR+6PsyVzBa1Jd1VtkanTw0/QZTvyk6fg/Q8OfuINYQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -8996,6 +9001,11 @@ validate-npm-package-name@^3.0.0, validate-npm-package-name@~3.0.0:
   integrity sha1-X6kS2B630MdK/BQN5zF/DKffQ34=
   dependencies:
     builtins "^1.0.3"
+
+validate.js@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.npm.taobao.org/validate.js/download/validate.js-0.12.0.tgz#17f989e37c192ea2f826bbf19bf4e97e6e4be68f"
+  integrity sha1-F/mJ43wZLqL4Jrvxm/Tpfm5L5o8=
 
 vary@^1.1.2, vary@~1.1.2:
   version "1.1.2"

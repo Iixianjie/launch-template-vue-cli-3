@@ -5,6 +5,7 @@
       return {
         status_: '',
         tipMsg_: '',
+        require: false
       }
     },
     props: {
@@ -29,9 +30,9 @@
         type: Boolean,
         default: false
       },
-      label: [String],
+      label: String,
       // 对应子表单所绑定的model key值, 用于帮助Form表达正确的将错误信息输出给FormItem
-      name: [String],
+      name: String,
     },
     watch: {
       status: {
@@ -56,19 +57,17 @@
         <label class="bk-formItem waves-effect">
 
           <div vShow={this.label} class="bk-formItem_label">
-            {this.label}
+            {this.label}<i vShow={this.require} class="bk-formItem_require">*</i>
           </div>
           <div class="bk-formItem_cont">
 
             <div class="bk-formItem_contMain">
-              内容区域
+              {this.$scopedSlots.default()}
             </div>
 
-            <transition name="bk-fade">
-              <div vShow={this.hasFeedback && this.tipMsg_ && this.status_} class={['bk-formItem_info', `__${this.status_}`]}>
-                {this.tipMsg_}
-              </div>
-            </transition>
+            <div vShow={this.hasFeedback && this.tipMsg_ && this.status_} class={['bk-formItem_info', `__${this.status_}`]}>
+              {this.tipMsg_}
+            </div>
           </div>
 
           <i vShow={this.hasArrow} class="bk-formItem_arrow bl-icon icon-next"></i>

@@ -112,7 +112,7 @@ $a-color: $geekblue-6;
 $a-hover-color: $geekblue-4;
 
 //主题色(默认 色板第6个、浅色、深色)
-$theme-color: $cyan-6;
+$theme-color: $cyan-6 !default;
 $theme-color-light: $cyan-4;
 $theme-color-dark: $cyan-8;
 

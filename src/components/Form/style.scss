@@ -36,6 +36,12 @@
     border-top: 1px solid $b-border;
   }
 
+  &_require {
+    color: $color-error;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+
   &_label {
     flex: 0 0 auto;
     margin-right: 16px;
@@ -61,12 +67,11 @@
   }
 
   &_statusIcon {
-    display: flex;
     padding: 0 4px;
     font-size: $font-size-24;
+    line-height: 1;
 
     &:after {
-      margin: auto;
       font-family: "blink-font";
       font-weight: 600;
     }

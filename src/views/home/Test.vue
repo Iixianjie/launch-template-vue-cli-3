@@ -8,11 +8,31 @@
       </div>
     </div>
 
-    <Form :layout="layout ? 'col' : 'row'">
+    <Form
+      @submit="submit"
+      :models="fields"
+      :rules="rules"
+      :layout="layout ? 'col' : 'row'">
       <FormTitle title="基本信息" desc="输入您的基本信息，用于xxxx"></FormTitle>
-      <formItem label="姓名"></formItem>
-      <formItem label="出生日期" hasArrow :status="status" tipMsg="输入有误！"></formItem>
-      <formItem label="所在城市"></formItem>
+      <formItem label="姓名" name="name">
+        <input type="text" v-model="fields.name">
+      </formItem>
+      <formItem label="简介" name="desc">
+        <input type="text" v-model="fields.desc">
+      </formItem>
+      <formItem label="出生日期" tipMsg="输入有误！" name="time">
+        <input type="datetime-local" v-model="fields.time">
+      </formItem>
+      <formItem label="爱好" tipMsg="输入有误！" name="like">
+        吃饭
+        <input type="checkbox" value="吃饭" v-model="fields.like">
+
+        睡觉
+        <input type="checkbox" value="睡觉" v-model="fields.like">
+
+        打豆豆
+        <input type="checkbox" value="打豆豆" v-model="fields.like">
+      </formItem>
       <FormFoot textAlign="right">
         <button class="btn __info __block __lg">submit</button>
         <button class="btn __denger __block __lg">reset</button>
@@ -28,7 +48,44 @@
       return {
         show: true,
         layout: true,
-        status: 'error'
+        status: 'error',
+        fields: {
+          name: '',
+          desc: '',
+          time: '',
+          like: []
+        },
+        rules: {
+          name: {
+            presence: true,
+            length: {
+              minimum: 2,
+              maximum: 5
+            }
+          },
+          desc: {
+            length: {
+              minimum: 5,
+              maximum: 100
+            }
+          },
+          time: {
+            datetime: {
+              latest: '2019-06-04'
+            }
+          },
+          like: {
+            presence: true,
+            length: {
+              is: 2
+            }
+          }
+        }
+      }
+    },
+    methods: {
+      submit({ isPass }) {
+        console.log(isPass ? '验证通过' : '验证未通过');
       }
     }
   };
