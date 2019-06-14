@@ -9,11 +9,18 @@ const util = {
   fail: (msg = '', errno = -1, data = null) => ({
     errno,
     data,
-    msg,
-  })
+    msg
+  }),
+  delay(ms) {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        res();
+      }, ms);
+    });
+  }
 };
 
 module.exports = {
   util,
-  router: new Router() 
+  router: new Router()
 };

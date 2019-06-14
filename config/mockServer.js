@@ -9,8 +9,10 @@ const app = new Koa();
 const Router = require('koa-router');
 const router = new Router();
 
-const { router: mockRouter, util } = require('../mock/util');
+
+const { router: mockRouter, util } = require('./util');
 requireMockFiles();
+
 
 portIsOccupied(3333, (err, port) => {
   
@@ -21,7 +23,18 @@ portIsOccupied(3333, (err, port) => {
       ctx.body = util.fail('访问的地址不存在', 404);
     });
 
-  app.use(router.routes()).listen(port);
+  app
+    .use(async (ctx, next) => {
+
+      /* 模拟一个一秒内的延迟 */
+      let randMs = Math.round(Math.random() * 1000)
+      await util.delay(randMs);
+      next();
+
+    })
+    .use(router.routes())
+    .listen(port);
+
 
   app.on('error', err => {
     log.error('mock server error', err);
@@ -50,7 +63,7 @@ function requireMockFiles() {
   let filesList = [];
   readFileList(path.join(__dirname, '../mock'), filesList);
   let mockFile = filesList.filter(v => {
-    return /\w+\.mock\.js$/.test(v);
+    return /\w+\.js$/.test(v);
   });
 
   mockFile.forEach(v => {

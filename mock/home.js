@@ -1,4 +1,4 @@
-const { util, router } = require('./util');
+const { util, router } = require('../config/util');
 const { Random } = require('mockjs');
 
 router.get('/', (ctx, next) => {
