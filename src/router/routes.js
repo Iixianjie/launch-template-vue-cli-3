@@ -3,7 +3,7 @@ import { loadable } from './util';
 export default [
   {
     path: '/',
-    component: require('@/views/_layout/Base').default,
+    component: require('@/views/_main/Base').default,
     meta: { title: '主页' },
     children: [
       {
@@ -18,7 +18,7 @@ export default [
   },
   {
     path: '/user',
-    component: require('@/views/_layout/User').default,
+    component: require('@/views/_main/User').default,
     meta: { title: '用户' },
     children: [
       // 没有合适的根页面就定向到其他页面
