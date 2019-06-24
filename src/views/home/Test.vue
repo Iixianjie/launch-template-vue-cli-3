@@ -4,6 +4,7 @@
     <div class="mtb-24">
       <div>
         布局:
+        <Spin :show="true"></Spin>
         <button class="btn __sm" @click="layout = !layout">{{layout ? 'row' : 'col'}}</button>
       </div>
     </div>
@@ -14,10 +15,10 @@
       :rules="rules"
       :layout="layout ? 'col' : 'row'">
       <FormTitle title="基本信息" desc="输入您的基本信息，用于xxxx"></FormTitle>
-      <formItem label="姓名" name="name">
+      <formItem label="姓名" hasFeedback hasArrow name="name">
         <input type="text" v-model="fields.name">
       </formItem>
-      <formItem label="简介" name="desc">
+      <formItem label="简介" hasFeedback hasArrow name="desc">
         <input type="text" v-model="fields.desc">
       </formItem>
       <formItem label="出生日期" tipMsg="输入有误！" name="time">
@@ -42,7 +43,12 @@
 </template>
 
 <script>
+  import Spin from '@/components/Spin/Spin';
+
   export default {
+    components: {
+      Spin
+    },
     name: 'Test',
     data() {
       return {

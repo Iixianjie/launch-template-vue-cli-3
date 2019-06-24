@@ -26,7 +26,6 @@
 
         let width = img.offsetWidth;
         let height = img.offsetHeight;
-        this.loadErr = true;
 
         this.$nextTick(() => {
           this.initCanvas(width, height);
