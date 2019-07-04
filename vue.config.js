@@ -13,7 +13,7 @@ module.exports = {
     sourceMap: myConf.devCssSourceMap,
     loaderOptions: {
       // 给 sass-loader 传递选项
-      sass: myConf.sassVars
+      sass: myConf.sassOption
     }
   },
   configureWebpack: customWebpackConf,

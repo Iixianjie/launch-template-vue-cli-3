@@ -1,4 +1,4 @@
-import { loadable } from './util';
+// import { loadable } from './util';
 
 export default [
   {

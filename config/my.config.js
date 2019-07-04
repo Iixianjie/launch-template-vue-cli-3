@@ -11,7 +11,7 @@ module.exports = {
   devCssSourceMap: true,
 
   // sass全局变量、混合
-  sassVars: {
+  sassOption: {
     // 这里假设你有 `src/variables.scss` 这个文件并且需要全局引入
     data: '@import "@/sass/_base/index.scss";'
   },
@@ -31,7 +31,7 @@ module.exports = {
     NOW_ENV: JSON.stringify('/PROD_ENV')
   },
 
-  // 清除console 依赖 uglifyjs-webpack-plugin
+  // 清除console 依赖 terser-webpack-plugin
   cleanConsole: true,
 
   // 开启gizp   依赖 compression-webpack-plugin
@@ -62,5 +62,8 @@ module.exports = {
   // },
 
   // 单独分离css
-  cssExtract: true
+  cssExtract: true,
+
+  // 启动mock服务
+  mock: false,
 };

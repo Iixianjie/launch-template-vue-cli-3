@@ -13,7 +13,6 @@ const router = new Router();
 const { router: mockRouter, util } = require('./util');
 requireMockFiles();
 
-
 portIsOccupied(3333, (err, port) => {
   
   router
@@ -71,7 +70,7 @@ function requireMockFiles() {
   });
 }
 
-// 检测端口占用情况，如果占用会递归增加prot知道最后返回一个有效的prot
+// 检测端口占用情况，如果占用会递归增加prot直到最后返回一个有效的prot
 function portIsOccupied(port, cb) {
   // 创建服务并监听该端口
   var server = net.createServer().listen(port);

@@ -2,21 +2,27 @@ const webpack = require('webpack');
 const myConf = require('./my.config');
 const chalk = require('chalk');
 
-/* 启动mock服务 */
-const cp = require('child_process').exec('npm run mock');
-
-cp.stdout.on('data', function (data) {
-  if(/http:\/\/localhost/.test(data)) {
-    console.log('   ' + chalk.blue('[mock] ') + data);
-  }
-});
-
-cp.stderr.on('data', function (err) {
-  console.log('   ' + chalk.red('[mock] ') + data);
-});
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = process.env.NODE_ENV === 'production';
 
 function isEmptyObj(obj) {
   return Object.keys(obj).length <= 0;
+}
+
+/* 启动mock服务 */
+if(myConf.mock) {
+  const cp = require('child_process').exec('npm run mock');
+
+  cp.stdout.on('data', function(data) {
+    if (/http:\/\/localhost/.test(data)) {
+      console.log('   ' + chalk.blue('[mock] ') + data);
+    }
+  });
+  
+  cp.stderr.on('data', function(err) {
+    console.log('   ' + chalk.red('[mock] ') + data);
+  });
+  
 }
 
 module.exports = function(config) {
@@ -44,7 +50,7 @@ module.exports = function(config) {
   }
 
   /* 生产配置 */
-  if (process.env.NODE_ENV === 'production') {
+  if (isProd) {
     // 定义prod环境变量
     if (!isEmptyObj(myConf.prodEnv)) {
       prodPlugin.push(new webpack.DefinePlugin(myConf.prodEnv));
@@ -52,14 +58,13 @@ module.exports = function(config) {
 
     // 清除console
     if (myConf.cleanConsole) {
-      const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+      const TerserJSPlugin = require('terser-webpack-plugin');
 
       prodPlugin.push(
-        new UglifyJSPlugin({
-          sourceMap: myConf.productionSourceMap,
-          uglifyOptions: {
+        new TerserJSPlugin({
+          terserOptions: {
             compress: {
-              drop_console: true,
+              drop_console: myConf.cleanConsole
             }
           }
         })
@@ -80,10 +85,11 @@ module.exports = function(config) {
         })
       );
     }
-  } else {
-    /* 开发配置 */
+  }
 
-    // 定义prod环境变量
+  /* 开发配置 */
+  if (isDev) {
+    // 定义dev环境变量
     if (!isEmptyObj(myConf.devEnv)) {
       devPlugin.push(new webpack.DefinePlugin(myConf.devEnv));
     }

@@ -22,12 +22,12 @@ function importAll(requires) {
 
     const moduleConfig = requires(fileName);
   
-    const directiveName = lowerCase(fileName
+    const modulesName = lowerCase(fileName
       .split('/')
       .pop()
       .split('.')[0]);
   
-    modules[directiveName] = moduleConfig.default || moduleConfig;
+    modules[modulesName] = moduleConfig.default || moduleConfig;
   });
 }
 
