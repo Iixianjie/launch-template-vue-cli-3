@@ -4,8 +4,8 @@ export default {
     num: 0,
   },
   mutations: {
-    setState(state, payload) {
+    setState (state, payload) {
       state.num = state.num + payload.num;
-    }
-  }
+    },
+  },
 };

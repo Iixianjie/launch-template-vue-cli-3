@@ -48,7 +48,6 @@ requireComponent.keys().forEach(fileName => {
 const requireDirective = require.context('./', true, /\w+\.(directive)\.(js)$/);
 
 requireDirective.keys().forEach(fileName => {
-
   const directiveConfig = requireDirective(fileName);
 
   const directiveName = lowerCase(fileName

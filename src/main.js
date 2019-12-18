@@ -3,10 +3,10 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import './sass/main.scss';
+/* 基础样式 */
+import 'style-base/main.scss';
 
-import './sass/element/waves';
-
+/* 功能组件 */
 import './components/index';
 
 Vue.config.productionTip = false;

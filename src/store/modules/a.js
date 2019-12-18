@@ -11,21 +11,21 @@ let delay = delay => {
 export default {
   namespaced: true,
   state: {
-    num: 0
+    num: 0,
   },
   getters: {
-    num2(state) {
+    num2 (state) {
       return state.num + 5;
-    }
+    },
   },
   mutations: {
-    setState
+    setState,
   },
   actions: {
-    async delayAddNum({ commit }) {
+    async delayAddNum ({ commit }) {
       let num = await delay(2);
       // commit({ type: 'setState', num: num }, { root: true });
       commit('setState', { num: num });
-    }
-  }
+    },
+  },
 };

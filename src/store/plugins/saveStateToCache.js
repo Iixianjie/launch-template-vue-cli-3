@@ -11,8 +11,7 @@ export default store => {
   //   sessionStorage.setItem('APP_STORE_CACHE', JSON.stringify(state));
   // });
 
-  window.addEventListener('beforeunload', function() {
+  window.addEventListener('beforeunload', function () {
     sessionStorage.setItem('APP_STORE_CACHE', JSON.stringify(store.state));
   });
-
 };

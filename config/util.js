@@ -4,12 +4,12 @@ const util = {
   success: (data = null, msg = '') => ({
     errno: 0,
     data,
-    msg
+    msg,
   }),
   fail: (msg = '', errno = -1, data = null) => ({
     errno,
     data,
-    msg
+    msg,
   }),
   delay(ms) {
     return new Promise((res, rej) => {
@@ -17,10 +17,10 @@ const util = {
         res();
       }, ms);
     });
-  }
+  },
 };
 
 module.exports = {
   util,
-  router: new Router()
+  router: new Router(),
 };

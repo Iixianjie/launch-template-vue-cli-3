@@ -3,6 +3,3 @@ import './common/style/index.scss';
 
 /* 自动全局注册指令、组件 */
 import './autoRegister';
-
-/* 图标 */
-import './Icon/iconfont.css';

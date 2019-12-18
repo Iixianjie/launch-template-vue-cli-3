@@ -12,23 +12,25 @@ module.exports = {
 
   // sass全局变量、混合
   sassOption: {
-    // 这里假设你有 `src/variables.scss` 这个文件并且需要全局引入
-    data: '@import "@/sass/_base/index.scss";'
+    sassOptions: {
+      // 这里假设你有 `src/variables.scss` 这个文件并且需要全局引入
+      data: '@import "~style-base/_base/index.scss";',
+    },
   },
 
   // 通用环境变量
   baseEnv: {
-    BASE_ENV: JSON.stringify('/BASE_ENV')
+    BASE_ENV: JSON.stringify('/BASE_ENV'),
   },
 
   // 开发模式环境变量
   devEnv: {
-    NOW_ENV: JSON.stringify('/DEV_ENV')
+    NOW_ENV: JSON.stringify('/DEV_ENV'),
   },
 
   // 生产模式环境变量
   prodEnv: {
-    NOW_ENV: JSON.stringify('/PROD_ENV')
+    NOW_ENV: JSON.stringify('/PROD_ENV'),
   },
 
   // 清除console 依赖 terser-webpack-plugin
@@ -45,7 +47,7 @@ module.exports = {
 
   // 别名
   alias: {
-    '@': path.join(__dirname, '../src')
+    '@': path.join(__dirname, '../src'),
   },
 
   // proxy

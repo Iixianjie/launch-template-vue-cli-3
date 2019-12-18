@@ -2,11 +2,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import modules from './autoRegisterModules';
-import saveStateToCache from './plugins/saveStateToCache';
-import storeMixin from './storeMixin';
+// import saveStateToCache from './plugins/saveStateToCache';
 
 Vue.use(Vuex);
-Vue.mixin(storeMixin);
 
 const store = new Vuex.Store({
   strict: true,

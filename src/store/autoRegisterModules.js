@@ -17,16 +17,15 @@ let modules = {};
 importAll(requireModules);
 importAll(requireModulesGlobal);
 
-function importAll(requires) {
+function importAll (requires) {
   requires.keys().forEach(fileName => {
-
     const moduleConfig = requires(fileName);
-  
+
     const modulesName = lowerCase(fileName
       .split('/')
       .pop()
       .split('.')[0]);
-  
+
     modules[modulesName] = moduleConfig.default || moduleConfig;
   });
 }

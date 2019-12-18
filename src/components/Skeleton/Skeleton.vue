@@ -1,5 +1,5 @@
 <script>
-function getRandWidth(baseP) {
+function getRandWidth (baseP) {
   let rand = Math.floor(Math.random() * 50);
   return rand + baseP + '%';
 }
@@ -9,25 +9,25 @@ export default {
   props: {
     show: {
       type: Boolean,
-      default: false
+      default: false,
     },
     // 总条数
     count: {
       type: Number,
-      default: 3
+      default: 3,
     },
     // 内容线条的数量
     lineCount: {
       type: Number,
-      default: 3
+      default: 3,
     },
     // 是否显示头像框
     img: {
       type: Boolean,
-      default: false
+      default: false,
     },
   },
-  render() {
+  render () {
     let { count, img, show, sty, $slots, lineCount } = this;
 
     let Skeletons = Array.apply(null, { length: count }).map(i => (
@@ -50,8 +50,8 @@ export default {
       </div>
     ));
 
-    return show ? <div class={sty.wrap}>{Skeletons}</div> : $slots.default
-  }
+    return show ? <div class={sty.wrap}>{Skeletons}</div> : $slots.default;
+  },
 };
 </script>
 
