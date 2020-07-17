@@ -13,7 +13,7 @@
   "dependencies": {
     "@lxjx/utils": "^1.1.7",
     "core-js": "^3.4.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "style-base": "^0.0.10",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7",
